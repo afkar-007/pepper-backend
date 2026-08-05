@@ -3,14 +3,16 @@ const Product = require("../models/product")
 const productPost = async(req,res)=>{
 
     try{
+          console.log(req.file);
 
         const item = await Product.create({
          ...req.body,
-         image:req.file.filename
+         image:req.file.path
         })
         res.status(200).json({
             message:"Product Created Successfully",
             data:item
+
         })
       }  
 

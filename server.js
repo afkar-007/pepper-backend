@@ -16,7 +16,7 @@ app.use(express.urlencoded({extended:true}))
 
 app.use('/pepper',Router)
 app.use('/pepper/products',productRouter)
-app.use('/uploads',express.static("uploads"))
+
 
 app.get('/',(req,res)=>{
     res.send("Pepper Backend is running")

@@ -1,6 +1,6 @@
 const express= require("express")
 const productRouter = express.Router()
-const uploads = require("../middleware/multer")
+const multer =require('../middleware/multer')
 
 const verify = require('../middleware/verify')
 
@@ -11,7 +11,7 @@ const {postOrders,getOrders}=require('../controller/order')
 const {wishlistPost,getWishlist,removeWishlist}=require('../controller/Wishlist')
 
 
-productRouter.post('/product',uploads.single("image"),productPost)
+productRouter.post('/product',multer.single("image"),productPost)
 productRouter.get('/getProducts',verify,getProducts)
 productRouter.get('/getoneProduct/:id',verify,getOneProduct)
 
